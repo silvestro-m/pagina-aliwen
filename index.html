@@ -974,7 +974,7 @@ document.getElementById("modalBackdrop").addEventListener("click", function(e) {
 /* ── CANVA EMBED ────────────────────────────── */
 function editCanva() {
   const saved = localStorage.getItem("aliwen_canva_url") || "";
-  const url = prompt("Pegá el link de tu presentación de Canva:\n(Ej: https://www.canva.com/design/xxxxx/view?embed)", saved);
+  const url = prompt("https://canva.link/przkmeo2gkqd3gf", saved);
   if (url === null) return; // cancelled
   if (url.trim() === "") {
     localStorage.removeItem("aliwen_canva_url");

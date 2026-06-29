@@ -155,67 +155,81 @@
     .section-ornament span { font-size: 0.65rem; letter-spacing: 0.3em; color: var(--brown-pale); }
 
     /* ── NOSOTROS ────────────────────────────── */
-    #nosotros { background: var(--cream-light); padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+#nosotros { 
+  background: var(--cream-light); 
+  padding-bottom: 3rem; 
+  border-bottom: 1px solid var(--border); 
+}
 
-    .nosotros-inner {
-      max-width: 880px; margin: 0 auto; padding: 0 2rem;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 2.4rem; align-items: start;
-    }
-    @media(max-width: 640px) { .nosotros-inner { grid-template-columns: 1fr; } }
+.nosotros-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .nosotros-text h3 {
-      font-size: 1.2rem; color: var(--brown-dark);
-      letter-spacing: 0.06em; margin-bottom: 1rem;
-    }
-    .nosotros-text p {
-      font-size: 0.9rem; color: var(--brown-light);
-      line-height: 1.85; margin-bottom: 0.9rem; font-style: italic;
-    }
-    .nosotros-values {
-      margin-top: 1.2rem; display: flex; flex-direction: column; gap: 0.7rem;
-    }
-    .nosotros-value {
-      display: flex; align-items: flex-start; gap: 0.7rem;
-      font-size: 0.88rem; color: var(--brown-dark);
-    }
-    .nosotros-value i { color: var(--brown-mid); font-size: 1.05rem; margin-top: 1px; flex-shrink: 0; }
+.nosotros-text {
+  text-align: center;
+  width: 100%;
+  max-width: 760px;
+}
 
-    /* Canva embed */
-    .canva-wrap {
-      background: var(--cream-card);
-      border: 1px solid var(--border);
-      border-radius: 14px; overflow: hidden;
-    }
-    .canva-frame-box {
-      position: relative; width: 100%; padding-top: 56.25%; /* 16:9 */
-      background: var(--cream-mid);
-    }
-    .canva-frame-box iframe {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      border: none;
-    }
-    .canva-placeholder {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 0.8rem; color: var(--brown-light); text-align: center; padding: 1rem;
-    }
-    .canva-placeholder i { font-size: 2.8rem; color: var(--brown-pale); }
-    .canva-placeholder p { font-size: 0.82rem; line-height: 1.5; font-style: italic; }
-    .canva-actions {
-      padding: 0.9rem 1.2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      border-top: 1px solid var(--border);
-    }
-    .canva-actions span { font-size: 0.72rem; color: var(--brown-light); font-style: italic; }
-    .btn-canva-edit {
-      background: none; border: 1px solid var(--border);
-      color: var(--brown-mid); border-radius: 20px;
-      padding: 5px 14px; font-size: 0.75rem; cursor: pointer;
-      font-family: Georgia, serif; transition: background 0.2s;
-      display: flex; align-items: center; gap: 5px;
-    }
-    .btn-canva-edit:hover { background: var(--cream-mid); }
+@media(max-width: 640px) { 
+  .nosotros-inner { 
+    grid-template-columns: 1fr; 
+  } 
+}
+
+.nosotros-text {
+  text-align: center;
+
+}
+
+.nosotros-text h3 {
+  font-size: 1.2rem;
+  color: var(--brown-dark);
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+.nosotros-text p {
+  font-size: 0.9rem;
+  color: var(--brown-light);
+  line-height: 1.85;
+  margin-bottom: 0.9rem;
+  font-style: italic;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nosotros-values {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.nosotros-value {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.88rem;
+  color: var(--brown-dark);
+  max-width: 700px;
+  text-align: left;
+}
+
+.nosotros-value i { 
+  color: var(--brown-mid); 
+  font-size: 1.05rem; 
+  margin-top: 1px; 
+  flex-shrink: 0; 
+}
+
 
     /* ── PROPOSALS ───────────────────────────── */
     #propuestas { background: #f5f0eb; }
@@ -617,22 +631,6 @@
         </div>
       </div>
     </div>
-
-    <div class="canva-wrap reveal">
-      <div class="canva-frame-box" id="canvaFrameBox">
-        <div class="canva-placeholder" id="canvaPlaceholder">
-          <i class="ti ti-presentation"></i>
-          <p>Presentación de Canva</p>
-          <p style="font-size:0.75rem; opacity:0.7;">Hacé clic en "Editar" para agregar el link de tu presentación de Canva</p>
-        </div>
-      </div>
-      <div class="canva-actions">
-        <span>Presentación del equipo</span>
-        <button class="btn-canva-edit" onclick="editCanva()">
-          <i class="ti ti-edit"></i> Editar
-        </button>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -659,7 +657,7 @@
         <p class="card-lorem">Viví la emoción de recorrer el Valle de Calamuchita desde su lado más aventurero. Esta propuesta está pensada para quienes buscan conectar con la naturaleza, descubrir senderos serranos y disfrutar paisajes únicos. Incluye recorridos guiados por puntos emblemáticos, visitas al Dique Los Molinos y actividades al aire libre que combinan adrenalina, aprendizaje y diversión. Ideal para espíritus inquietos y amantes de la aventura.</p>
       </div>
       <div class="card-footer">
-        <span class="card-price">$75.000 / persona</span>
+        <span class="card-price">$78.900 / persona</span>
         <button class="card-btn">Ver más</button>
       </div>
     </article>
@@ -678,7 +676,7 @@
         <p class="card-lorem">Desconectate de la rutina y sumergite en la tranquilidad de Calamuchita. Esta experiencia combina paisajes naturales, recorridos panorámicos y momentos de descanso en algunos de los rincones más hermosos de la región. Incluye visitas a espacios culturales, degustaciones regionales y paradas en lugares icónicos como el Dique Los Molinos, creando el equilibrio perfecto entre relax, cultura y naturaleza.</p>
       </div>
       <div class="card-footer">
-        <span class="card-price">$80.000 / persona</span>
+        <span class="card-price">$84.900 / persona</span>
         <button class="card-btn">Ver más</button>
       </div>
     </article>
@@ -697,7 +695,7 @@
         <p class="card-lorem">La opción perfecta para compartir en familia y crear recuerdos inolvidables. Disfrutá de actividades recreativas, paseos junto al lago, visitas a Villa General Belgrano y experiencias interactivas como chocolaterías, cervecerías y centros de apicultura. Un viaje pensado para todas las edades, donde la diversión, el aprendizaje y el contacto con la naturaleza se unen en una experiencia completa y única.</p>
       </div>
       <div class="card-footer">
-        <span class="card-price">$78.000 / persona</span>
+        <span class="card-price">$82.900 / persona</span>
         <button class="card-btn">Ver más</button>
       </div>
     </article>
@@ -895,9 +893,9 @@
     <div class="modal-total">
       <div>
         <div class="t-label">TOTAL ESTIMADO</div>
-        <div class="t-amount" id="totalAmount">$75.000</div>
+        <div class="t-amount" id="totalAmount">$78.900</div>
       </div>
-      <div class="t-break" id="priceBreakdown">1 × $75.000</div>
+      <div class="t-break" id="priceBreakdown">1 × $78.900</div>
     </div>
     <div class="modal-actions">
       <button class="btn-cancel" onclick="closeModal()">Volver</button>
@@ -916,9 +914,9 @@
 <script>
 /* ── DATA ──────────────────────────────────── */
 const proposals = [
-  { title: "Propuesta 1", sub: "Sierra · Aventura",   price: 75000 },
-  { title: "Propuesta 2", sub: "Naturaleza · Relax",  price: 80000 },
-  { title: "Propuesta 3", sub: "Lago · Familia",      price: 78000 }
+  { title: "Propuesta 1", sub: "Sierra · Aventura",   price: 78900 },
+  { title: "Propuesta 2", sub: "Naturaleza · Relax",  price: 84900 },
+  { title: "Propuesta 3", sub: "Lago · Familia",      price: 82900 }
 ];
 let currentIdx = 0;
 
@@ -970,30 +968,6 @@ function handleReserve() {
 document.getElementById("modalBackdrop").addEventListener("click", function(e) {
   if (e.target === this) closeModal();
 });
-
-/* ── CANVA EMBED ────────────────────────────── */
-function editCanva() {
-  const saved = localStorage.getItem("aliwen_canva_url") || "";
-  const url = prompt("https://canva.link/przkmeo2gkqd3gf", saved);
-  if (url === null) return; // cancelled
-  if (url.trim() === "") {
-    localStorage.removeItem("aliwen_canva_url");
-    document.getElementById("canvaFrameBox").innerHTML =
-      '<div class="canva-placeholder" id="canvaPlaceholder"><i class="ti ti-presentation"></i><p>Presentación de Canva</p><p style="font-size:0.75rem;opacity:0.7;">Hacé clic en "Editar" para agregar el link de tu presentación de Canva</p></div>';
-    return;
-  }
-  localStorage.setItem("aliwen_canva_url", url.trim());
-  loadCanva(url.trim());
-}
-function loadCanva(url) {
-  const box = document.getElementById("canvaFrameBox");
-  box.innerHTML = '<iframe loading="lazy" src="' + url + '" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>';
-}
-// Load saved on start
-(function() {
-  const saved = localStorage.getItem("aliwen_canva_url");
-  if (saved) loadCanva(saved);
-})();
 
 /* ── GALLERY LIGHTBOX ───────────────────────── */
 const galleryImgs = [
